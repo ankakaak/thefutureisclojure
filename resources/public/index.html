@@ -711,6 +711,88 @@
         </div>
 
 
+        <div class="slide" id="hiccup-slide">
+          <section>
+            <div class="editor-content">(use 'hiccup.core)
+
+(html [:body
+  [:h1 "Hello"]
+  [:p "Hello world!"]])
+</div>
+          </section>
+        </div>
+
+
+        <div class="slide" id="korma-slide">
+          <section>
+            <div class="editor-content">(use 'korma.core)
+
+(defentity person)
+
+(dry-run
+  (select person
+    (where {:name "Bodil" :age [> 18]})
+    (order :name :ASC)))
+</div>
+          </section>
+        </div>
+
+
+        <div class="slide" id="clojure-dot-test-slide">
+          <section>
+            <div class="editor-content">(use 'clojure.test)
+
+(with-test
+  (defn divisible-by? [number divisors]
+    "True if number is divisible by all numbers in divisors."
+    (every? #(= 0 (rem number %1)) divisors))
+
+  (is (divisible-by? 6 [2 3]))
+  (is (divisible-by? 15 [3 5]))
+  (is (not (divisible-by? 15 [3 5 10]))))
+
+(run-tests)
+</div>
+          </section>
+        </div>
+
+
+        <div class="slide" id="divisible-by-in-clojure-slide">
+          <section class="middle">
+            <pre class="lang-clj">(defn divisible-by? [number divisors]
+  "True if number is divisible by all numbers in divisors."
+  (every? #(= 0 (rem number %1)) divisors))
+            </pre>
+          </section>
+        </div>
+
+
+
+        <div class="slide" id="divisible-by-in-java-slide">
+          <section class="middle">
+            <pre class="lang-java">package me.caturday.javaisformuggles;
+
+import java.util.Collection;
+
+public class DivisibleBy {
+    /**
+     * True if number is divisible by all numbers in divisors.
+     */
+    public static boolean isDivisibleBy(Long number,
+              Collection&lt;Long&gt; divisors) {
+        for (Long divisor : divisors) {
+            if (number % divisor != 0L) {
+                return false;
+            }
+        }
+    	return true;
+    }
+}
+            </pre>
+          </section>
+        </div>
+
+
         <div class="slide" id="omfg-slide">
           <section class="middle">
             <h2 class="kitteh">OH GOD</h2>
@@ -718,16 +800,6 @@
             <h2 class="kitteh">I CAN SEE... FOREVER</h2>
           </section>
         </div>
-
-        
-        <div class="slide" id="the-repl-slide">
-          <section>
-            <div class="editor-content">(println "Hello world!")
-</div>
-          </section>
-        </div>
-
-
 
 
         <div class="slide" id="outro-slide">

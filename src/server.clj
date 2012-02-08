@@ -5,7 +5,7 @@
             [clojure.contrib.string :as string]
             [clojail.core :as clojail]
             clojail.testers)
-  (:use clojure.test)
+  (:use clojure.test hiccup.core korma.core)
   (:import [org.webbitserver WebServer WebServers WebSocketHandler]
            [org.webbitserver.handler StaticFileHandler]))
 
@@ -13,7 +13,7 @@
   (java.io.PushbackReader. (java.io.StringReader. s)))
 
 (defn sandbox []
-  (clojail/sandbox (disj clojail.testers/secure-tester 'def) :timeout 1000))
+  (clojail/sandbox clojail.testers/secure-tester-without-def :timeout 1000))
 
 (with-test
   (defn ppr [el]

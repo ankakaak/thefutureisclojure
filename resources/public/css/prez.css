@@ -19,9 +19,10 @@
 }
 
 .slide pre {
-    margin: 0.5em 0;
+    margin: 0.5em 2em;
     font-family: 'Droid Sans Mono';
     font-size: 20px;
+    line-height: 1em;
 }
 
 .slide code {
