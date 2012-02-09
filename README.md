@@ -9,3 +9,5 @@ run the following commands:
     $ lein run
 
 The slides will now be available at [http://localhost:8000/](http://localhost:8000/).
+
+Hit Alt-R to run code in REPL (Does not work on FF in OS X, FFS)
